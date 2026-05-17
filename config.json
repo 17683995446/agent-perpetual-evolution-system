@@ -1,0 +1,11 @@
+{
+  "siliconflow_api_key": "sk-uqelhavcdhfxjzjesdenxpbtqombamjniazzjtbssmdcwdvg",
+  "api_base_url": "https://api.siliconflow.cn/v1",
+  "api_model": "Qwen/Qwen2.5-7B-Instruct",
+  "api_timeout": 60,
+  "cache_enabled": true,
+  "cache_dir": "./cache",
+  "log_level": "INFO",
+  "max_workers": 4,
+  "batch_size": 10
+}

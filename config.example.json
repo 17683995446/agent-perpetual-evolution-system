@@ -1,0 +1,23 @@
+{
+  "comment": "Agent永续自进化系统 - 配置文件 (超简单！)",
+  "siliconflow_api_key": "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  
+  "optional_settings": {
+    "comment": "以下设置都是可选的，有默认值",
+    
+    "api_base_url": "https://api.siliconflow.cn/v1",
+    "api_model": "Qwen/Qwen2.5-7B-Instruct",
+    "api_timeout": 60,
+    
+    "cache_enabled": true,
+    "cache_dir": "./cache",
+    "cache_ttl": 3600,
+    
+    "log_level": "INFO",
+    "log_file": "./logs/agent.log",
+    
+    "max_workers": 4,
+    "batch_size": 10
+  }
+}
+
