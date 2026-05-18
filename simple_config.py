@@ -60,7 +60,7 @@ class SimpleConfig:
         if max_workers:
             try:
                 self.max_workers = int(max_workers)
-            except:
+            except (ValueError, TypeError):
                 pass
     
     def _load_from_file(self):
@@ -109,7 +109,7 @@ class SimpleConfig:
         if "max_workers" in config:
             try:
                 self.max_workers = int(config["max_workers"])
-            except:
+            except (ValueError, TypeError):
                 pass
     
     def save_config(self, filepath="./config.json"):

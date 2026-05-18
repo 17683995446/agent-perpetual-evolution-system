@@ -1,0 +1,2 @@
+# Agent永续自进化系统 - Python依赖
+requests>=2.31.0
