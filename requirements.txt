@@ -1,2 +1,8 @@
 # Agent永续自进化系统 - Python依赖
+# v2.0 - 深度测试后补充的依赖
+
 requests>=2.31.0
+rich>=13.0.0
+tenacity>=8.0.0
+structlog>=23.0.0
+sqlalchemy>=2.0.0
