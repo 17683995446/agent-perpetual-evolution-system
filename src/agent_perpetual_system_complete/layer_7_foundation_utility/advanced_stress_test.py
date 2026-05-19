@@ -226,13 +226,15 @@ class EdgeCaseTester:
         print("🧪 测试并发访问...")
         
         shared_resource = 0
+        lock = asyncio.Lock()  # 🔧 修复：添加锁机制！
         
         async def modify_resource():
             nonlocal shared_resource
             for _ in range(100):
-                current = shared_resource
-                await asyncio.sleep(0.0001)
-                shared_resource = current + 1
+                async with lock:  # 🔧 修复：使用锁保护共享资源！
+                    current = shared_resource
+                    await asyncio.sleep(0.0001)
+                    shared_resource = current + 1
         
         tasks = [modify_resource() for _ in range(10)]
         await asyncio.gather(*tasks)
@@ -240,7 +242,8 @@ class EdgeCaseTester:
         return {
             'test': 'concurrent_access',
             'final_value': shared_resource,
-            'success': True
+            'expected': 1000,  # 10个任务 * 100次操作 = 1000
+            'success': shared_resource == 1000
         }
     
     async def test_race_conditions(self):
