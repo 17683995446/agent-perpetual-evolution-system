@@ -19,12 +19,21 @@ def show_current_status():
     print("\n📊 当前状态检查:")
     
     # 检查环境变量
-    if os.environ.get("SILICONFLOW_API_KEY") and print("✅ 环境变量已配置") or print("❌ 环境变量未配置")
+    if os.environ.get("SILICONFLOW_API_KEY"):
+        print("✅ 环境变量已配置")
+    else:
+        print("❌ 环境变量未配置")
     
     # 检查配置文件
-    if os.path.exists("./config.json") and print("✅ config.json 存在") or print("❌ config.json 不存在")
+    if os.path.exists("./config.json"):
+        print("✅ config.json 存在")
+    else:
+        print("❌ config.json 不存在")
     
-    if os.path.exists("./agent_config.json") and print("✅ agent_config.json 存在") or print("❌ agent_config.json 不存在")
+    if os.path.exists("./agent_config.json"):
+        print("✅ agent_config.json 存在")
+    else:
+        print("❌ agent_config.json 不存在")
 
 
 def quick_setup():
