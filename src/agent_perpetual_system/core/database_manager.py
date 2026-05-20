@@ -20,6 +20,11 @@ from sqlalchemy.orm import DeclarativeBase
 from .config_manager import get_application_settings
 
 
+from datetime import datetime
+from sqlalchemy import DateTime, Integer
+from sqlalchemy.orm import Mapped, mapped_column
+
+
 class DatabaseBaseModel(AsyncAttrs, DeclarativeBase):
     """
     数据库基础模型类
@@ -27,7 +32,26 @@ class DatabaseBaseModel(AsyncAttrs, DeclarativeBase):
     所有数据库模型都需要继承此类，
     自动获得创建时间和更新时间字段。
     """
-    pass
+    id: Mapped[int] = mapped_column(
+        Integer,
+        primary_key=True,
+        autoincrement=True,
+        nullable=False,
+        comment="主键ID"
+    )
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime,
+        default=datetime.utcnow,
+        nullable=False,
+        comment="创建时间"
+    )
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime,
+        default=datetime.utcnow,
+        onupdate=datetime.utcnow,
+        nullable=False,
+        comment="更新时间"
+    )
 
 
 # 全局数据库引擎和会话工厂
