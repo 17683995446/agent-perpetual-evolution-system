@@ -52,11 +52,13 @@ class EvolutionPhaseEnum:
     """
     进化阶段枚举类
 
-    定义空闲进化过程的三个阶段：
+    定义空闲进化过程的四个阶段：
+    - IDLE: 空闲状态（等待进化）
     - MEMORY_CLEANUP: 记忆整理与清理
     - STRATEGY_OPTIMIZE: 执行策略优化
     - KNOWLEDGE_LEARNING: 知识学习与补强
     """
+    IDLE = "idle"
     MEMORY_CLEANUP = "memory_cleanup"
     STRATEGY_OPTIMIZE = "strategy_optimize"
     KNOWLEDGE_LEARNING = "knowledge_learning"
