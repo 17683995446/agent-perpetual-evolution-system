@@ -13,7 +13,7 @@ import logging
 from pathlib import Path
 from typing import Optional
 import structlog
-from .config_manager import get_application_settings
+from .config_manager import get_application_settings, ApplicationSettings
 
 
 def setup_structured_logging() -> None:
