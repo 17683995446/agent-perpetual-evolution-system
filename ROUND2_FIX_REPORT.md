@@ -40,7 +40,7 @@
 
 **修复前**:
 ```python
-API_KEY = "sk-uqelhavcdhfxjzjesdenxpbtqombamjniazzjtbssmdcwdvg"
+API_KEY = "REDACTED_API_KEY"
 ```
 
 **修复后**:

@@ -44,7 +44,7 @@
 **问题代码**:
 ```python
 # 原代码 - 硬编码密钥
-API_KEY = "sk-uqelhavcdhfxjzjesdenxpbtqombamjniazzjtbssmdcwdvg"
+API_KEY = "REDACTED_API_KEY"
 ```
 
 **修复后**:

@@ -1,5 +1,5 @@
 {
-  "siliconflow_api_key": "sk-uqelhavcdhfxjzjesdenxpbtqombamjniazzjtbssmdcwdvg",
+  "siliconflow_api_key": "REDACTED_API_KEY",
   "api_base_url": "https://api.siliconflow.cn/v1",
   "api_model": "Qwen/Qwen2.5-7B-Instruct",
   "api_timeout": 60,

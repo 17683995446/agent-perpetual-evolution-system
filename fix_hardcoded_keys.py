@@ -21,7 +21,7 @@ files_to_fix = [
 ]
 
 # 硬编码密钥模式
-API_KEY_PATTERN = r'API_KEY\s*=\s*["\']sk-uqelhavcdhfxjzjesdenxpbtqombamjniazzjtbssmdcwdvg["\']'
+API_KEY_PATTERN = r'API_KEY\s*=\s*["\']REDACTED_API_KEY["\']'
 
 # 替换内容
 REPLACEMENT = '''# 使用环境变量管理敏感配置
@@ -39,7 +39,7 @@ def fix_file(filepath):
         with open(filepath, 'r', encoding='utf-8') as f:
             content = f.read()
         
-        if "sk-uqelhavcdhfxjzjesdenxpbtqombamjniazzjtbssmdcwdvg" in content:
+        if "REDACTED_API_KEY" in content:
             # 使用正则替换
             new_content = re.sub(API_KEY_PATTERN, REPLACEMENT, content)
             
@@ -91,7 +91,7 @@ def main():
         if os.path.exists(filepath):
             with open(filepath, 'r', encoding='utf-8') as f:
                 content = f.read()
-                if "sk-uqelhavcdhfxjzjesdenxpbtqombamjniazzjtbssmdcwdvg" in content:
+                if "REDACTED_API_KEY" in content:
                     remaining_keys.append(filepath)
     
     if remaining_keys:
